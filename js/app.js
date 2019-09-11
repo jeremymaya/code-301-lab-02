@@ -38,7 +38,7 @@ $.get('/data/page-1.json', data => {
         // console.log(tempHorn);
     });
     getKeywords(allHorns);
-
+    fillSelect();
     // console.log(allHorns);
 });
 
@@ -73,9 +73,15 @@ const getKeywords = (arr) => {
     console.log(keywords);
 }               
 
+function fillSelect() {
+    keywords.forEach(keyword => {
+        const $newOption = $('<option></option>');
+        $newOption.text(keyword);
+        $newOption.attr('value', keyword);
+        $('select').append($newOption);
+    })
+}
 
 // Add event listener to the select list to filter images
 
 // Show/Hide images depending on the selected keyword
-
-
