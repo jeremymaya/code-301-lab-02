@@ -33,14 +33,26 @@ function Horn(horn) {
 $.get('/data/page-1.json', data => {
 
     data.forEach(horn => {
-
         let tempHorn = new Horn(horn);
-        // render
-        console.log(tempHorn);
+        tempHorn.render();
+        // console.log(tempHorn);
     });
-    console.log(allHorns);
-
-})
+    // console.log(allHorns);
+});
 
 
 // Render function
+
+Horn.prototype.render = function() {
+
+    const myTemplate = $('#photo-template').html();
+    const $newSection = $('<section></section>');
+    $newSection.html(myTemplate);
+    
+    $newSection.find('h2').text(this.title);
+    $newSection.find('img').attr('src', this.image_url);
+    $newSection.find('p').text(this.description);
+    
+    // console.log($newSection);
+    $('main').append($newSection);
+};
