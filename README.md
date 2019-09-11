@@ -17,11 +17,11 @@ Number and name of feature: #2 Filter Images
 
 Estimate of time needed to complete: 1.5 hours
 
-Start time: _____
+Start time: 10:45
 
-Finish time: _____
+Finish time: not quite finished at 1:45
 
-Actual time needed to complete: _____
+Actual time needed to complete: 3 hours + (almost done!)
 
 ------------------------------------------
 
