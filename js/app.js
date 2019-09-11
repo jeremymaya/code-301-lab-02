@@ -57,10 +57,19 @@ Horn.prototype.render = function() {
     $newSection.find('img').attr('src', this.image_url);
     $newSection.find('p').text(this.description);
     
-
     // console.log($newSection);
     $('main').append($newSection);
 };
+
+function fillSelect() {
+
+    keywords.forEach(keyword => {
+        const $newOption = $('<option></option>');
+        $newOption.text(keyword);
+        $newOption.attr('value', keyword);
+        $('select').append($newOption);
+    })
+}
 
 // Generating Select element from allHorn
 
@@ -73,15 +82,23 @@ const getKeywords = (arr) => {
     console.log(keywords);
 }               
 
-function fillSelect() {
-    keywords.forEach(keyword => {
-        const $newOption = $('<option></option>');
-        $newOption.text(keyword);
-        $newOption.attr('value', keyword);
-        $('select').append($newOption);
-    })
-}
 
 // Add event listener to the select list to filter images
+
+
+
+// Able to filter out a specific selection.
+// Still need to complete Feature #2
+$('select').change( function() {
+    let selected = $('select').val();
+    console.log(selected);
+    if(selected === 'default') {
+        console.log('default selected');
+    }
+    else {
+        $('section').css("visibility", "hidden");
+        $('section[data-keyword="narwhal"]').css("visibility", "visible");
+    }
+})
 
 // Show/Hide images depending on the selected keyword
