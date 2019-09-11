@@ -25,8 +25,6 @@ function Horn(horn) {
     allHorns.push(this);
 };
 
-// new Horn(testHorn);
-
 
 // AJAX
 
